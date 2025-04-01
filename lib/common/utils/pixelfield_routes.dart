@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import '../../features/onboarding/presentation/screens/splash_screen.dart';
 
 class PixelFieldRoutes {
   static const String splashScreen = '/splash';

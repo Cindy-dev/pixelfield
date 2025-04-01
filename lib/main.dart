@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pixelfield/common/design_system/theme/app_theme.dart';
-import 'package:pixelfield/utils/pixelfield_routes.dart';
+import 'common/utils/pixelfield_routes.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations(
