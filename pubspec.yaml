@@ -13,6 +13,7 @@ dependencies:
   equatable: ^2.0.7 # For state comparisons
   connectivity_plus: ^6.1.3 # To detect online/offline connectivity
   hive_flutter: ^1.1.0 # For local storage
+  get_it: ^8.0.3
 
 
 dev_dependencies:
