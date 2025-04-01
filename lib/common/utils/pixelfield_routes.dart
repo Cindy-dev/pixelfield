@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:pixelfield/features/collection/presentation/screens/my_collection_screen.dart';
 import '../../features/onboarding/presentation/screens/splash_screen.dart';
 
 class PixelFieldRoutes {
   static const String splashScreen = '/splash';
   static const String welcomeScreen = '/welcomeScreen';
   static const String signInScreen = '/signInScreen';
-  static const String navBarScreen = '/navBarScreen';
+  static const String myCollectionScreen = '/myCollectionScreen';
   static Map<String, Widget Function(BuildContext)> routes = {};
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -14,6 +15,10 @@ class PixelFieldRoutes {
       case splashScreen:
         return routeBuilder(
           const SplashScreen(),
+        );
+      case myCollectionScreen:
+        return routeBuilder(
+          const MyCollectionScreen(),
         );
       // Default Route is error route
       default:
