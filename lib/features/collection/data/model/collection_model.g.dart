@@ -61,13 +61,14 @@ class BottleAdapter extends TypeAdapter<Bottle> {
       details: fields[7] as Details?,
       tastingNotes: fields[8] as TastingNotes?,
       labelDetails: (fields[9] as List?)?.cast<LabelDetail>(),
+      year: fields[10] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Bottle obj) {
     writer
-      ..writeByte(10)
+      ..writeByte(11)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -87,7 +88,9 @@ class BottleAdapter extends TypeAdapter<Bottle> {
       ..writeByte(8)
       ..write(obj.tastingNotes)
       ..writeByte(9)
-      ..write(obj.labelDetails);
+      ..write(obj.labelDetails)
+      ..writeByte(10)
+      ..write(obj.year);
   }
 
   @override

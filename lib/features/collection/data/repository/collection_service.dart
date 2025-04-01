@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:pixelfield/common/service/hive_strings.dart';
-import 'package:pixelfield/common/utils/app_extension.dart';
 import 'package:pixelfield/features/collection/data/model/collection_model.dart';
 import '../../../../common/service/hive_repository.dart';
 
@@ -53,7 +52,6 @@ class CollectionService {
   // Refresh data: load from asset, then update the cache if internet is available
   Future<List<Bottle>> refreshData() async {
     List<Bottle> data = await loadCollectionData();
-    printOnlyInDebugMode(data);
     await saveCollectionToCache(data);
     return data;
   }

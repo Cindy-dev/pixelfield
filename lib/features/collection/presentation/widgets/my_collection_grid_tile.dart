@@ -14,9 +14,22 @@ class MyCollectionGridTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration:
-      BoxDecoration(color: context.themeData.scaffoldBackgroundColor),
+          BoxDecoration(color: context.themeData.scaffoldBackgroundColor),
       child: Column(
-        children: [Image.asset(collectionData.image ?? "")],
+        children: [
+          Image.asset(collectionData.image ?? ""),
+          Text(
+            collectionData.name ?? "",
+            style: context.textTheme.bodyLarge?.copyWith(fontSize: 22),
+          ),
+          Text(
+        " ${   collectionData.year ?? ""}",
+            style: context.textTheme.bodyLarge?.copyWith(fontSize: 22),
+          ), Text(
+            collectionData.bottleNumber ?? "",
+            style: context.textTheme.bodyLarge?.copyWith(fontSize: 22),
+          ),
+        ],
       ),
     );
   }

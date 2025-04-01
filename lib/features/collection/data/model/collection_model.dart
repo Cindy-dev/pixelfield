@@ -57,18 +57,20 @@ class Bottle {
   @HiveField(9)
   List<LabelDetail>? labelDetails;
 
-  Bottle({
-    this.id,
-    this.collection,
-    this.status,
-    this.name,
-    this.age,
-    this.image,
-    this.bottleNumber,
-    this.details,
-    this.tastingNotes,
-    this.labelDetails,
-  });
+  @HiveField(10)
+  String? year;
+  Bottle(
+      {this.id,
+      this.collection,
+      this.status,
+      this.name,
+      this.age,
+      this.image,
+      this.bottleNumber,
+      this.details,
+      this.tastingNotes,
+      this.labelDetails,
+      this.year});
   factory Bottle.fromJson(Map<String, dynamic> json) => Bottle(
         id: json["id"],
         collection: json["collection"],
@@ -77,6 +79,7 @@ class Bottle {
         age: json["age"],
         image: json["image"],
         bottleNumber: json["bottle_number"],
+        year: json["year"],
         details:
             json["details"] == null ? null : Details.fromJson(json["details"]),
         tastingNotes: json["tasting_notes"] == null
@@ -97,6 +100,7 @@ class Bottle {
         "image": image,
         "bottle_number": bottleNumber,
         "details": details?.toJson(),
+        "year": year,
         "tasting_notes": tastingNotes?.toJson(),
         "label_details": labelDetails == null
             ? []

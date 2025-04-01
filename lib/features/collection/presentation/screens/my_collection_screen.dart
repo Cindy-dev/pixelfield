@@ -52,21 +52,20 @@ class _MyCollectionScreenState extends State<MyCollectionScreen> {
                     return CupertinoActivityIndicator(
                         color: context.secondaryColor);
                   case CollectionLoaded():
-                    return Expanded(
-                      child: GridView.builder(
-                        itemCount: state.collection.length,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                mainAxisSpacing: 8,
-                                crossAxisSpacing: 8,
-                                childAspectRatio: 1.0,
-                                crossAxisCount: 2),
-                        itemBuilder: (context, index) {
-                          return MyCollectionGridTile(
-                            collectionData: state.collection[index],
-                          );
-                        },
-                      ),
+                    return GridView.builder(
+                      itemCount: state.collection.length,
+                      shrinkWrap: true,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              mainAxisSpacing: 8,
+                              crossAxisSpacing: 8,
+                             // childAspectRatio: 1.0,
+                              crossAxisCount: 2),
+                      itemBuilder: (context, index) {
+                        return MyCollectionGridTile(
+                          collectionData: state.collection[index],
+                        );
+                      },
                     );
                   case CollectionError():
                     return Text(

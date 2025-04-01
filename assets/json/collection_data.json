@@ -6,6 +6,7 @@
       "status": "Genuine Bottle (Unopened)",
       "name": "Talisker",
       "age": "18 Year Old",
+      "year": 1992,
       "image": "assets/images/one_cask_bottle.png",
       "bottle_number": "112/158",
       "details": {
@@ -60,6 +61,7 @@
       "status": "Genuine Bottle (Unopened)",
       "name": "Springbank",
       "age": "18 Year Old",
+      "year": 1990,
       "image": "assets/images/one_cask_bottle.png",
       "bottle_number": "113/168",
       "details": {
@@ -110,6 +112,7 @@
     },
     {
       "id": 1256,
+      "year": 2000,
       "collection": "Genesis Collection",
       "status": "Genuine Bottle (Unopened)",
       "name": "Talisker",
@@ -164,6 +167,7 @@
     },
     {
       "id": 2345,
+      "year": 1998,
       "collection": "Genesis Collection",
       "status": "Genuine Bottle (Unopened)",
       "name": "Springbank",
