@@ -15,6 +15,8 @@ Future<void> main() async {
   setupLocator();
   await Hive.initFlutter();
   await HiveRepository.openHives([HiveStrings.collectionBox]);
+  await HiveRepository.registerAdapters();
+
   SystemChrome.setPreferredOrientations(
     [
       DeviceOrientation.portraitUp,

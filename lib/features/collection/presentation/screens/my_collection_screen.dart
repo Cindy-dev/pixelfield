@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pixelfield/common/utils/app_extension.dart';
+import 'package:pixelfield/common/utils/margin_util.dart';
 import 'package:pixelfield/common/utils/pixelfield_strings.dart';
 import 'package:pixelfield/common/utils/svg_render_widget.dart';
 import '../../../../common/di/service_locator.dart';
@@ -17,12 +18,7 @@ class MyCollectionScreen extends StatefulWidget {
 }
 
 class _MyCollectionScreenState extends State<MyCollectionScreen> {
-  @override
-  void initState() {
-    //gives access to the bloc
-    context.read<CollectionBloc>().add(LoadCollection());
-    super.initState();
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -45,38 +41,41 @@ class _MyCollectionScreenState extends State<MyCollectionScreen> {
                   SvgRenderWidget(svgPath: PixelFieldStrings.notification),
                 ],
               ),
-              BlocBuilder<CollectionBloc, CollectionState>(
-                  builder: (context, state) {
-                switch (state) {
-                  case CollectionLoading():
-                    return CupertinoActivityIndicator(
-                        color: context.secondaryColor);
-                  case CollectionLoaded():
-                    return GridView.builder(
-                      itemCount: state.collection.length,
-                      shrinkWrap: true,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              mainAxisSpacing: 8,
-                              crossAxisSpacing: 8,
-                             // childAspectRatio: 1.0,
-                              crossAxisCount: 2),
-                      itemBuilder: (context, index) {
-                        return MyCollectionGridTile(
-                          collectionData: state.collection[index],
-                        );
-                      },
-                    );
-                  case CollectionError():
-                    return Text(
-                      state.message,
-                      style: context.textTheme.bodyLarge
-                          ?.copyWith(color: context.themeData.cardColor),
-                    );
-                  default:
-                    return const Center(child: Text("No Data"));
-                }
-              }),
+              const YMargin(30),
+              Expanded(
+                child: BlocBuilder<CollectionBloc, CollectionState>(
+                    builder: (context, state) {
+                  switch (state) {
+                    case CollectionLoading():
+                      return CupertinoActivityIndicator(
+                          color: context.secondaryColor);
+                    case CollectionLoaded():
+                      return GridView.builder(
+                        itemCount: state.collection.length,
+                        shrinkWrap: true,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                mainAxisSpacing: 8,
+                                crossAxisSpacing: 8,
+                               childAspectRatio: 0.5,
+                                crossAxisCount: 2),
+                        itemBuilder: (context, index) {
+                          return MyCollectionGridTile(
+                            collectionData: state.collection[index],
+                          );
+                        },
+                      );
+                    case CollectionError():
+                      return Text(
+                        state.message,
+                        style: context.textTheme.bodyLarge
+                            ?.copyWith(color: context.themeData.cardColor),
+                      );
+                    default:
+                      return const Center(child: Text("No Data"));
+                  }
+                }),
+              ),
             ],
           ),
         ),

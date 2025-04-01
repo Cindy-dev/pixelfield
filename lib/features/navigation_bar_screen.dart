@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pixelfield/common/utils/app_extension.dart';
 import 'package:pixelfield/common/utils/pixelfield_strings.dart';
 import 'package:pixelfield/common/utils/svg_render_widget.dart';
 import 'package:pixelfield/features/collection/presentation/screens/my_collection_screen.dart';
+
+import 'collection/logic/collection_bloc.dart';
+import 'collection/logic/collection_event.dart';
 
 class NavigationBarScreen extends StatefulWidget {
   const NavigationBarScreen({super.key});
@@ -12,6 +16,12 @@ class NavigationBarScreen extends StatefulWidget {
 }
 
 class _NavigationBarScreenState extends State<NavigationBarScreen> {
+  @override
+  void initState() {
+    //gives access to the bloc
+    context.read<CollectionBloc>().add(LoadCollection());
+    super.initState();
+  }
   int _currentIndex = 1;
   List screenOptions = [
     const Scaffold(),

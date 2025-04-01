@@ -1,4 +1,5 @@
 import 'package:hive_flutter/adapters.dart';
+import '../../features/collection/data/model/collection_model.dart';
 import 'hive_interface.dart';
 
 class HiveRepository implements IRepository {
@@ -7,6 +8,15 @@ class HiveRepository implements IRepository {
   static openHives(List<String> boxNames) async {
     var boxHives = boxNames.map((name) => Hive.openBox(name));
     await Future.wait(boxHives);
+  }
+
+  static registerAdapters() async {
+    // Register Hive adapters
+    Hive.registerAdapter(CollectionModelAdapter());
+    Hive.registerAdapter(BottleAdapter());
+    Hive.registerAdapter(DetailsAdapter());
+    Hive.registerAdapter(LabelDetailAdapter());
+    Hive.registerAdapter(TastingNotesAdapter());
   }
 
   @override
