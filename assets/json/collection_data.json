@@ -1,0 +1,221 @@
+{
+  "bottles": [
+    {
+      "id": 2504,
+      "collection": "Genesis Collection",
+      "status": "Genuine Bottle (Unopened)",
+      "name": "Talisker",
+      "age": "18 Year Old",
+      "image": "assets/images/one_cask_bottle.png",
+      "bottle_number": "112/158",
+      "details": {
+        "distillery": "Text",
+        "region": "Text",
+        "country": "Text",
+        "type": "Text",
+        "age_statement": "Text",
+        "filled": "Text",
+        "bottled": "Text",
+        "cask_number": "Text",
+        "ABV": "Text",
+        "size": "Text",
+        "finish": "Text"
+      },
+      "tasting_notes": {
+        "by": "Charles MacLean MBE",
+        "nose": [
+          "Description",
+          "Description",
+          "Description"
+        ],
+        "palate": [
+          "Description",
+          "Description",
+          "Description"
+        ],
+        "finish": [
+          "Description",
+          "Description",
+          "Description"
+        ]
+      },
+      "label_details": [
+        {
+          "title": "Title",
+          "description": [
+            "Description",
+            "Description"
+          ],
+          "attachments": [
+            "image1.png",
+            "image2.png",
+            "image3.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1234,
+      "collection": "Genesis Collection",
+      "status": "Genuine Bottle (Unopened)",
+      "name": "Springbank",
+      "age": "18 Year Old",
+      "image": "assets/images/one_cask_bottle.png",
+      "bottle_number": "113/168",
+      "details": {
+        "distillery": "Text",
+        "region": "Text",
+        "country": "Text",
+        "type": "Text",
+        "age_statement": "Text",
+        "filled": "Text",
+        "bottled": "Text",
+        "cask_number": "Text",
+        "ABV": "Text",
+        "size": "Text",
+        "finish": "Text"
+      },
+      "tasting_notes": {
+        "by": "Charles MacLean MBE",
+        "nose": [
+          "Description",
+          "Description",
+          "Description"
+        ],
+        "palate": [
+          "Description",
+          "Description",
+          "Description"
+        ],
+        "finish": [
+          "Description",
+          "Description",
+          "Description"
+        ]
+      },
+      "label_details": [
+        {
+          "title": "Title",
+          "description": [
+            "Description",
+            "Description"
+          ],
+          "attachments": [
+            "image1.png",
+            "image2.png",
+            "image3.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1256,
+      "collection": "Genesis Collection",
+      "status": "Genuine Bottle (Unopened)",
+      "name": "Talisker",
+      "age": "18 Year Old",
+      "image": "assets/images/one_cask_bottle.png",
+      "bottle_number": "114/108",
+      "details": {
+        "distillery": "Text",
+        "region": "Text",
+        "country": "Text",
+        "type": "Text",
+        "age_statement": "Text",
+        "filled": "Text",
+        "bottled": "Text",
+        "cask_number": "Text",
+        "ABV": "Text",
+        "size": "Text",
+        "finish": "Text"
+      },
+      "tasting_notes": {
+        "by": "Charles MacLean MBE",
+        "nose": [
+          "Description",
+          "Description",
+          "Description"
+        ],
+        "palate": [
+          "Description",
+          "Description",
+          "Description"
+        ],
+        "finish": [
+          "Description",
+          "Description",
+          "Description"
+        ]
+      },
+      "label_details": [
+        {
+          "title": "Title",
+          "description": [
+            "Description",
+            "Description"
+          ],
+          "attachments": [
+            "image1.png",
+            "image2.png",
+            "image3.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2345,
+      "collection": "Genesis Collection",
+      "status": "Genuine Bottle (Unopened)",
+      "name": "Springbank",
+      "age": "18 Year Old",
+      "image": "assets/images/one_cask_bottle.png",
+      "bottle_number": "118/178",
+      "details": {
+        "distillery": "Text",
+        "region": "Text",
+        "country": "Text",
+        "type": "Text",
+        "age_statement": "Text",
+        "filled": "Text",
+        "bottled": "Text",
+        "cask_number": "Text",
+        "ABV": "Text",
+        "size": "Text",
+        "finish": "Text"
+      },
+      "tasting_notes": {
+        "by": "Charles MacLean MBE",
+        "nose": [
+          "Description",
+          "Description",
+          "Description"
+        ],
+        "palate": [
+          "Description",
+          "Description",
+          "Description"
+        ],
+        "finish": [
+          "Description",
+          "Description",
+          "Description"
+        ]
+      },
+      "label_details": [
+        {
+          "title": "Title",
+          "description": [
+            "Description",
+            "Description"
+          ],
+          "attachments": [
+            "image1.png",
+            "image2.png",
+            "image3.png"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
