@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:pixelfield/common/utils/app_extension.dart';
 import 'package:pixelfield/common/utils/pixelfield_routes.dart';
 import 'package:pixelfield/common/utils/pixelfield_strings.dart';
+import '../../../../common/widgets/custom_scaffold.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -30,17 +30,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        height: context.deviceHeight(),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            image: AssetImage(PixelFieldStrings.background),
-          ),
-        ),
-        child: Image.asset(PixelFieldStrings.oneCask),
-      ),
+    return CustomScaffold(
+      body: Image.asset(PixelFieldStrings.oneCask),
     );
   }
 }
