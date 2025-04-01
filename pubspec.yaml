@@ -30,7 +30,7 @@ flutter:
    - assets/images/svgs/
 
   fonts:
-     - family: EB Garamond
+     - family: EBGaramond
        fonts:
          - asset: assets/fonts/EBGaramond-Regular.ttf
            weight: 400

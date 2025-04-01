@@ -41,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
                   const XMargin(10),
                   InkWell(
                     onTap: () => Navigator.of(context)
-                        .pushNamed(PixelFieldRoutes.myCollectionScreen),
+                        .pushNamed(PixelFieldRoutes.navBarScreen),
                     child: Text(
                       "Sign in first",
                       style: context.textTheme.headlineLarge?.copyWith(

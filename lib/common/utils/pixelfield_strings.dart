@@ -3,7 +3,7 @@ class PixelFieldStrings {
   static String oneCask = "assets/images/one_cask.png";
   static String bottle = "assets/images/svgs/bottle.svg";
   static String gearSix = "assets/images/svgs/GearSix.svg";
-  static String scan = "assets/images/svgs/scan.svg";
+  static String scan = "assets/images/svgs/Scan.svg";
   static String squaresFour = "assets/images/svgs/SquaresFour.svg";
   static String notification = "assets/images/svgs/notification.svg";
 }
