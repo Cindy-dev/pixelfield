@@ -26,9 +26,10 @@ ThemeData _buildTheme() {
     primaryColor: primaryColor,
     shadowColor: _Colors.gray,
     cardColor: _Colors.white,
+    scaffoldBackgroundColor: _Colors.greyscaleBlack,
     highlightColor: Colors.transparent,
     appBarTheme: const AppBarTheme(
-      // backgroundColor: _Colors.black,
+      backgroundColor: _Colors.greyscaleBlack,
       systemOverlayStyle:
           SystemUiOverlayStyle(statusBarBrightness: Brightness.light),
       centerTitle: true,
@@ -109,6 +110,7 @@ ThemeData _buildTheme() {
         yellow: _Colors.yellow,
         primaryColor: _Colors.primaryColor,
         textColor: _Colors.textColor,
+        greyscaleBlack: _Colors.greyscaleBlack,
       ),
     ],
   );

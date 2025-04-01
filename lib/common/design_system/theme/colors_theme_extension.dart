@@ -7,6 +7,7 @@ class ColorThemeExt extends ThemeExtension<ColorThemeExt> {
   final Color primaryColor;
   final Color textColor;
   final Color yellow;
+  final Color greyscaleBlack;
 
   ColorThemeExt({
     required this.gray,
@@ -15,6 +16,7 @@ class ColorThemeExt extends ThemeExtension<ColorThemeExt> {
     required this.yellow,
     required this.primaryColor,
     required this.textColor,
+    required this.greyscaleBlack,
   });
   @override
   ThemeExtension<ColorThemeExt> copyWith(
@@ -23,6 +25,7 @@ class ColorThemeExt extends ThemeExtension<ColorThemeExt> {
       Color? gray,
       Color? textColor,
       Color? yellow,
+      Color? greyscaleBlack,
       Color? primaryColor}) {
     return ColorThemeExt(
       gray: gray ?? this.gray,
@@ -31,6 +34,7 @@ class ColorThemeExt extends ThemeExtension<ColorThemeExt> {
       yellow: yellow ?? this.yellow,
       primaryColor: primaryColor ?? this.primaryColor,
       textColor: textColor ?? this.textColor,
+      greyscaleBlack: greyscaleBlack ?? this.greyscaleBlack,
     );
   }
 

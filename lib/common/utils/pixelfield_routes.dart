@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:pixelfield/features/collection/presentation/screens/my_collection_screen.dart';
+import 'package:pixelfield/features/collection/presentation/screens/welcome_screen.dart';
 import '../../features/onboarding/presentation/screens/splash_screen.dart';
 
 class PixelFieldRoutes {
@@ -15,6 +16,10 @@ class PixelFieldRoutes {
       case splashScreen:
         return routeBuilder(
           const SplashScreen(),
+        );
+      case welcomeScreen:
+        return routeBuilder(
+          const WelcomeScreen(),
         );
       case myCollectionScreen:
         return routeBuilder(

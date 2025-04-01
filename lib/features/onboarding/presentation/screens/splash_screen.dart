@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 2),
       () {
         Navigator.pushReplacementNamed(
-            context, PixelFieldRoutes.myCollectionScreen);
+            context, PixelFieldRoutes.welcomeScreen);
       },
     );
   }

@@ -7,4 +7,5 @@ class _Colors {
   static const primaryColor = Color(0xff0B1519);
   static const gray = Color(0xff899194);
   static const red = Color(0xffFF1F0B);
+  static const greyscaleBlack = Color(0xff122329);
 }
