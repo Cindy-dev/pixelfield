@@ -1,4 +1,9 @@
+import 'package:hive_flutter/adapters.dart';
+part 'collection_model.g.dart';
+
+@HiveType(typeId: 0)
 class CollectionModel {
+  @HiveField(0)
   List<Bottle>? bottles;
 
   CollectionModel({
@@ -20,16 +25,36 @@ class CollectionModel {
       };
 }
 
+@HiveType(typeId: 1)
 class Bottle {
+  @HiveField(0)
   int? id;
+
+  @HiveField(1)
   String? collection;
+
+  @HiveField(2)
   String? status;
+
+  @HiveField(3)
   String? name;
+
+  @HiveField(4)
   String? age;
+
+  @HiveField(5)
   String? image;
+
+  @HiveField(6)
   String? bottleNumber;
+
+  @HiveField(7)
   Details? details;
+
+  @HiveField(8)
   TastingNotes? tastingNotes;
+
+  @HiveField(9)
   List<LabelDetail>? labelDetails;
 
   Bottle({
@@ -44,7 +69,6 @@ class Bottle {
     this.tastingNotes,
     this.labelDetails,
   });
-
   factory Bottle.fromJson(Map<String, dynamic> json) => Bottle(
         id: json["id"],
         collection: json["collection"],
@@ -80,17 +104,39 @@ class Bottle {
       };
 }
 
+@HiveType(typeId: 2)
 class Details {
+  @HiveField(0)
   String? distillery;
+
+  @HiveField(1)
   String? region;
+
+  @HiveField(2)
   String? country;
+
+  @HiveField(3)
   String? type;
+
+  @HiveField(4)
   String? ageStatement;
+
+  @HiveField(5)
   String? filled;
+
+  @HiveField(6)
   String? bottled;
+
+  @HiveField(7)
   String? caskNumber;
+
+  @HiveField(8)
   String? abv;
+
+  @HiveField(9)
   String? size;
+
+  @HiveField(10)
   String? finish;
 
   Details({
@@ -106,7 +152,6 @@ class Details {
     this.size,
     this.finish,
   });
-
   factory Details.fromJson(Map<String, dynamic> json) => Details(
         distillery: json["distillery"],
         region: json["region"],
@@ -136,16 +181,18 @@ class Details {
       };
 }
 
+@HiveType(typeId: 3)
 class LabelDetail {
+  @HiveField(0)
   String? title;
+
+  @HiveField(1)
   List<String>? description;
+
+  @HiveField(2)
   List<String>? attachments;
 
-  LabelDetail({
-    this.title,
-    this.description,
-    this.attachments,
-  });
+  LabelDetail({this.title, this.description, this.attachments});
 
   factory LabelDetail.fromJson(Map<String, dynamic> json) => LabelDetail(
         title: json["title"],
@@ -168,18 +215,21 @@ class LabelDetail {
       };
 }
 
+@HiveType(typeId: 4)
 class TastingNotes {
+  @HiveField(0)
   String? by;
+
+  @HiveField(1)
   List<String>? nose;
+
+  @HiveField(2)
   List<String>? palate;
+
+  @HiveField(3)
   List<String>? finish;
 
-  TastingNotes({
-    this.by,
-    this.nose,
-    this.palate,
-    this.finish,
-  });
+  TastingNotes({this.by, this.nose, this.palate, this.finish});
 
   factory TastingNotes.fromJson(Map<String, dynamic> json) => TastingNotes(
         by: json["by"],

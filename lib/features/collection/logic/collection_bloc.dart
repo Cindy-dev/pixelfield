@@ -15,34 +15,35 @@ class CollectionBloc extends Bloc<CollectionEvent, CollectionState> {
       emit(CollectionLoading());
       try {
         // First, try to load from cache.
-        // var cachedData = await collectionService.loadFromCache();
-        // if (cachedData.isNotEmpty) {
-        //   emit(CollectionLoaded(cachedData));
-        // }
+        var cachedData = collectionService.getCollectionFromCache();
+        if (cachedData.isNotEmpty) {
+          emit(CollectionLoaded(cachedData));
+        }
         // If connected, refresh data.
-        // if (await connectivityService.isConnected) {
-        //   var refreshedData = await collectionService.refreshData();
-        //   emit(CollectionLoaded(refreshedData));
-        // } else if (cachedData.isEmpty) {
-        // No data at all
-        emit(CollectionError("No data available and no internet connection."));
-        // }
+        if (await connectivityService.isConnected) {
+          var refreshedData = await collectionService.refreshData();
+          emit(CollectionLoaded(refreshedData));
+        } else if (cachedData.isEmpty) {
+          // No data at all
+          emit(
+              CollectionError("No data available and no internet connection."));
+        }
       } catch (e) {
         emit(CollectionError(e.toString()));
       }
     });
 
-    // on<RefreshCollection>((event, emit) async {
-    //   try {
-    //     if (await connectivityService.isConnected) {
-    //       var refreshedData = await collectionService.refreshData();
-    //       emit(CollectionLoaded(refreshedData));
-    //     } else {
-    //       emit(CollectionError("No internet connection for refresh."));
-    //     }
-    //   } catch (e) {
-    //     emit(CollectionError(e.toString()));
-    //   }
-    // });
+    on<RefreshCollection>((event, emit) async {
+      try {
+        if (await connectivityService.isConnected) {
+          var refreshedData = await collectionService.refreshData();
+          emit(CollectionLoaded(refreshedData));
+        } else {
+          emit(CollectionError("No internet connection for refresh."));
+        }
+      } catch (e) {
+        emit(CollectionError(e.toString()));
+      }
+    });
   }
 }
