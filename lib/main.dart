@@ -4,6 +4,7 @@ import 'package:pixelfield/common/design_system/theme/app_theme.dart';
 import 'common/utils/pixelfield_routes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
     [
       DeviceOrientation.portraitUp,
