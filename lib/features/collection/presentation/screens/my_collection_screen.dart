@@ -6,7 +6,6 @@ import 'package:pixelfield/common/utils/pixelfield_strings.dart';
 import 'package:pixelfield/common/utils/svg_render_widget.dart';
 import '../../../../common/di/service_locator.dart';
 import '../../logic/collection_bloc.dart';
-import '../../logic/collection_event.dart';
 import '../../logic/collection_state.dart';
 import '../widgets/my_collection_grid_tile.dart';
 

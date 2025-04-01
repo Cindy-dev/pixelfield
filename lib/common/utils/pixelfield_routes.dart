@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:pixelfield/features/collection/data/model/collection_model.dart';
+import 'package:pixelfield/features/collection/presentation/screens/bottle_detail_screen.dart';
 import 'package:pixelfield/features/collection/presentation/screens/my_collection_screen.dart';
 import 'package:pixelfield/features/onboarding/presentation/screens/welcome_screen.dart';
 import 'package:pixelfield/features/navigation_bar_screen.dart';
@@ -10,6 +12,7 @@ class PixelFieldRoutes {
   static const String welcomeScreen = '/welcomeScreen';
   static const String signInScreen = '/signInScreen';
   static const String myCollectionScreen = '/myCollectionScreen';
+  static const String bottleDetailScreen = '/bottleDetailScreen';
   static const String navBarScreen = '/navBarScreen';
   static Map<String, Widget Function(BuildContext)> routes = {};
 
@@ -30,6 +33,12 @@ class PixelFieldRoutes {
       case navBarScreen:
         return routeBuilder(
           const NavigationBarScreen(),
+        );
+      case bottleDetailScreen:
+        return routeBuilder(
+          BottleDetailScreen(
+            bottleDetails: settings.arguments as Bottle,
+          ),
         );
       // Default Route is error route
       default:
