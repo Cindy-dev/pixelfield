@@ -11,7 +11,7 @@ class CollectionInitial extends CollectionState {}
 class CollectionLoading extends CollectionState {}
 
 class CollectionLoaded extends CollectionState {
-  final List<CollectionModel> collection;
+  final List<Bottle> collection;
 
   CollectionLoaded(this.collection);
 

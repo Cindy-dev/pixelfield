@@ -31,6 +31,7 @@ flutter:
   assets:
    - assets/images/
    - assets/images/svgs/
+   - assets/json/
 
   fonts:
      - family: EBGaramond

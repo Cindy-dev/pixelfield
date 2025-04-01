@@ -14,22 +14,33 @@ class CollectionBloc extends Bloc<CollectionEvent, CollectionState> {
     on<LoadCollection>((event, emit) async {
       emit(CollectionLoading());
       try {
-        // First, try to load from cache.
-        var cachedData = collectionService.getCollectionFromCache();
+        // 1. Try loading cached data first
+        final cachedData = collectionService.getCollectionFromCache();
         if (cachedData.isNotEmpty) {
           emit(CollectionLoaded(cachedData));
         }
-        // If connected, refresh data.
-        if (await connectivityService.isConnected) {
-          var refreshedData = await collectionService.refreshData();
-          emit(CollectionLoaded(refreshedData));
+
+        // 2. Check connectivity and refresh if possible
+        final isConnected = await connectivityService.isConnected;
+        if (isConnected) {
+          final refreshedData = await collectionService.refreshData();
+          if (refreshedData.isNotEmpty) {
+            emit(CollectionLoaded(refreshedData));
+          } else {
+            // Handle case where refresh returns empty data but cache exists
+            if (cachedData.isNotEmpty) {
+              emit(CollectionLoaded(cachedData));
+            } else {
+              emit(CollectionError("No data received from refresh"));
+            }
+          }
         } else if (cachedData.isEmpty) {
-          // No data at all
-          emit(
-              CollectionError("No data available and no internet connection."));
+          emit(CollectionError("No internet connection and no cached data"));
         }
-      } catch (e) {
-        emit(CollectionError(e.toString()));
+      } catch (e,s) {
+        print(e);
+        print(s);
+        emit(CollectionError("Error loading collections: ${e.toString()}"));
       }
     });
 

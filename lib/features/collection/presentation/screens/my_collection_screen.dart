@@ -7,6 +7,7 @@ import '../../../../common/di/service_locator.dart';
 import '../../logic/collection_bloc.dart';
 import '../../logic/collection_event.dart';
 import '../../logic/collection_state.dart';
+import '../widgets/my_collection_grid_tile.dart';
 
 class MyCollectionScreen extends StatefulWidget {
   const MyCollectionScreen({super.key});
@@ -51,15 +52,21 @@ class _MyCollectionScreenState extends State<MyCollectionScreen> {
                     return CupertinoActivityIndicator(
                         color: context.secondaryColor);
                   case CollectionLoaded():
-                    return GridView.builder(
-                      itemCount: state.collection.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              mainAxisSpacing: 8,
-                              crossAxisSpacing: 8,
-                              childAspectRatio: 3 / 2,
-                              crossAxisCount: 2),
-                      itemBuilder: (context, index) {},
+                    return Expanded(
+                      child: GridView.builder(
+                        itemCount: state.collection.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                mainAxisSpacing: 8,
+                                crossAxisSpacing: 8,
+                                childAspectRatio: 1.0,
+                                crossAxisCount: 2),
+                        itemBuilder: (context, index) {
+                          return MyCollectionGridTile(
+                            collectionData: state.collection[index],
+                          );
+                        },
+                      ),
                     );
                   case CollectionError():
                     return Text(
