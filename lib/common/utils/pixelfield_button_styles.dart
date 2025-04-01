@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class StCharlesButtonStyle {
+class PixelFieldButtonStyle {
   final Color background;
   final Color textColor;
   final Color borderColor;
@@ -18,7 +18,7 @@ class StCharlesButtonStyle {
   static const bool buttonIsEnable = true;
   static const bool buttonIsLoading = false;
 
-  StCharlesButtonStyle({
+  PixelFieldButtonStyle({
     required this.background,
     required this.textColor,
     required this.borderColor,
