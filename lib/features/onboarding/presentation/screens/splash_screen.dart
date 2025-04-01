@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pixelfield/common/utils/pixelfield_strings.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,6 +11,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage(PixelFieldStrings.background),
+        )),
+      ),
+    );
   }
 }

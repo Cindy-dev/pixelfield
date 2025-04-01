@@ -1,9 +1,9 @@
 class PixelFieldStrings {
-  final String background = "assets/images/background.png";
-  final String oneCask = "assets/images/one_cask.png";
-  final String bottle = "assets/images/svgs/bottle.svg";
-  final String gearSix = "assets/images/svgs/GearSix.svg";
-  final String scan = "assets/images/svgs/scan.svg";
-  final String squaresFour = "assets/images/svgs/SquaresFour.svg";
-  final String notification = "assets/images/svgs/notification.svg";
+  static String background = "assets/images/background.png";
+  static String oneCask = "assets/images/one_cask.png";
+  static String bottle = "assets/images/svgs/bottle.svg";
+  static String gearSix = "assets/images/svgs/GearSix.svg";
+  static String scan = "assets/images/svgs/scan.svg";
+  static String squaresFour = "assets/images/svgs/SquaresFour.svg";
+  static String notification = "assets/images/svgs/notification.svg";
 }
