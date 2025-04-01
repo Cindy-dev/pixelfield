@@ -28,13 +28,6 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
         height: 99,
         padding: const EdgeInsets.symmetric(horizontal: 5),
         alignment: Alignment.center,
-        decoration: BoxDecoration(
-          border: Border.all(
-            width: 1,
-            color: const Color(0xffF0F2F4),
-          ),
-          color: context.primaryColor,
-        ),
         child: Theme(
           data: Theme.of(context).copyWith(
             splashColor: Colors.transparent,
