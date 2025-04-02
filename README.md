@@ -21,10 +21,12 @@ A simple Flutter wine collection app.
   <img src="assets\screenshots\welcome.png" width="400">
   <img src="assets\screenshots\collection.png" width="400">
   <img src="assets\screenshots\detail.png" width="400">
+  <img src="assets\screenshots\notes.png" width="400">
+  <img src="assets\screenshots\history.png" width="400">
   </p>
 
 ## DOWNLOAD APK
-<a href= 'https://drive.google.com/file/d/1q7E0WrfIFsHXHTi8NVKXEdohSXtuxc9K/view?usp=sharing'> Click to download </a>
+<a href= 'https://drive.google.com/file/d/1eA5FYhL0rOIH72krxH7Ga33GJcL0xhSl/view?usp=sharing'> Click to download </a>
 
 ## 🤓 Author(s)
 **Cindy dev**
