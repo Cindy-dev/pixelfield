@@ -67,7 +67,7 @@ class _StCharlesButton extends State<PixelFieldButton> {
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           color: !widget.isEnabled
               ? widget.disabledBackgroundColor ??
-                  context.themeData.shadowColor.withOpacity(0.3)
+                  context.themeData.shadowColor.withValues(alpha:0.3)
               : widget.color ?? context.secondaryColor,
         ),
         child: Row(

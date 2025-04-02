@@ -15,22 +15,25 @@ class WelcomeScreen extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 34),
         alignment: Alignment.bottomCenter,
         decoration: BoxDecoration(
-          color: context.primaryColor.withOpacity(0.5),
+          color: context.primaryColor.withValues(alpha: 0.5),
         ),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
           alignment: Alignment.bottomCenter,
           height: 264,
-          decoration:
-              BoxDecoration(color: context.themeData.scaffoldBackgroundColor),
+          decoration: BoxDecoration(
+            color: context.themeData.scaffoldBackgroundColor,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text("Welcome!", style: context.textTheme.displayLarge),
               Padding(
                 padding: const EdgeInsets.only(top: 8, bottom: 24),
-                child:
-                    Text("Text text text", style: context.textTheme.bodyLarge),
+                child: Text(
+                  "Text text text",
+                  style: context.textTheme.bodyLarge,
+                ),
               ),
               PixelFieldButton(text: "Scan bottle", onPressed: () {}),
               const YMargin(36),
@@ -40,16 +43,20 @@ class WelcomeScreen extends StatelessWidget {
                   Text("Have an account?", style: context.textTheme.bodyLarge),
                   const XMargin(10),
                   InkWell(
-                    onTap: () => Navigator.of(context)
-                        .pushNamed(PixelFieldRoutes.navBarScreen),
+                    onTap:
+                        () => Navigator.of(
+                          context,
+                        ).pushNamed(PixelFieldRoutes.navBarScreen),
                     child: Text(
                       "Sign in first",
                       style: context.textTheme.headlineLarge?.copyWith(
-                          fontSize: 16, color: context.secondaryColor),
+                        fontSize: 16,
+                        color: context.secondaryColor,
+                      ),
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

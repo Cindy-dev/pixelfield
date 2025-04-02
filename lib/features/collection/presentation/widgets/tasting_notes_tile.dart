@@ -16,7 +16,7 @@ Widget build(BuildContext context) {
     padding: const EdgeInsets.all(16),
     height: 136,
     width: context.deviceWidth(),
-    color: context.primaryColor.withOpacity(0.7),
+    color: context.primaryColor.withValues(alpha:0.7),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -79,11 +79,11 @@ ThemeData _buildTheme() {
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(3),
-        borderSide: BorderSide(color: _Colors.gray.withOpacity(0.5)),
+        borderSide: BorderSide(color: _Colors.gray.withValues(alpha:0.5)),
       ),
       isDense: true,
       hintStyle:
-          AppTextStyles.body.copyWith(color: _Colors.gray.withOpacity(0.7)),
+          AppTextStyles.body.copyWith(color: _Colors.gray.withValues(alpha:0.7)),
     ),
     cardTheme: const CardTheme(
       color: _Colors.white,
@@ -101,7 +101,6 @@ ThemeData _buildTheme() {
     ),
     bottomSheetTheme: const BottomSheetThemeData(
         backgroundColor: _Colors.white, surfaceTintColor: Colors.transparent),
-    dialogBackgroundColor: _Colors.white,
     extensions: [
       ColorThemeExt(
         gray: _Colors.gray,

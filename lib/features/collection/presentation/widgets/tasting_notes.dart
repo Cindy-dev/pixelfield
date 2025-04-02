@@ -31,7 +31,7 @@ class TastingNotesWidget extends StatelessWidget {
         Text(
           "by Charles MacLean MBE",
           style: context.textTheme.bodyLarge?.copyWith(
-            color: context.themeData.cardColor.withOpacity(0.7),
+            color: context.themeData.cardColor.withValues(alpha:0.7),
           ),
         ),
         const YMargin(8),

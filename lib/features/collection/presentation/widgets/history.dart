@@ -81,7 +81,7 @@ class HistoryWidget extends StatelessWidget {
                                 height: 64,
                                 margin: const EdgeInsets.only(right: 8),
                                 color: context.themeData.cardColor
-                                    .withOpacity(0.8),
+                                    .withValues(alpha:0.8),
                               );
                             }).toList(),
                           ),

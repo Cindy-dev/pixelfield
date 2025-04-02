@@ -18,7 +18,13 @@ class SvgRenderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(svgPath,
-        color: color, height: height, width: width, fit: BoxFit.scaleDown);
+    return SvgPicture.asset(
+      svgPath,
+      colorFilter:
+          color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
+      height: height,
+      width: width,
+      fit: BoxFit.scaleDown,
+    );
   }
 }
