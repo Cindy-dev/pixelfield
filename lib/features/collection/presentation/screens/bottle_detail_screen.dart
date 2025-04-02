@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pixelfield/common/utils/app_extension.dart';
 import 'package:pixelfield/common/utils/pixelfield_strings.dart';
 import 'package:pixelfield/features/collection/data/model/collection_model.dart';
+import 'package:pixelfield/features/collection/presentation/widgets/details.dart';
 
 class BottleDetailScreen extends StatefulWidget {
   final Bottle bottleDetails;
@@ -100,61 +101,66 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                                 style: context.textTheme.displayLarge?.copyWith(
                                     fontSize: 22, fontWeight: FontWeight.w400),
                               ),
-                              SizedBox(
-                                height: 300,
-                                child: DefaultTabController(
-                                  length: 3,
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        margin: const EdgeInsets.symmetric(
-                                            vertical: 26),
-                                        padding: const EdgeInsets.all(2),
-                                        height: 35,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(6),
-                                          color: context.primaryColor,
-                                        ),
-                                        child: TabBar(
-                                          indicatorSize:
-                                              TabBarIndicatorSize.tab,
-                                          dividerColor: Colors.transparent,
-                                          indicator: BoxDecoration(
+                             Column(
+                               children: [
+                               Flexible(
+                                    child: DefaultTabController(
+                                      length: 3,
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            margin: const EdgeInsets.symmetric(
+                                                vertical: 26),
+                                            padding: const EdgeInsets.all(2),
+                                            height: 35,
+                                            decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(12),
-                                              color: context.secondaryColor),
-                                          labelColor: context.primaryColor,
-                                          labelStyle: context
-                                              .textTheme.bodyLarge
-                                              ?.copyWith(fontSize: 12),
-                                          unselectedLabelStyle: context
-                                              .textTheme.bodyLarge
-                                              ?.copyWith(fontSize: 12),
-                                          unselectedLabelColor:
-                                              context.themeData.shadowColor,
-                                          tabs: const [
-                                            Tab(child: Text("Details")),
-                                            Tab(child: Text("Tasting notes")),
-                                            Tab(child: Text("History")),
-                                          ],
-                                        ),
+                                                  BorderRadius.circular(6),
+                                              color: context.primaryColor,
+                                            ),
+                                            child: TabBar(
+                                              indicatorSize:
+                                                  TabBarIndicatorSize.tab,
+                                              dividerColor: Colors.transparent,
+                                              indicator: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(12),
+                                                  color: context.secondaryColor),
+                                              labelColor: context.primaryColor,
+                                              labelStyle: context
+                                                  .textTheme.bodyLarge
+                                                  ?.copyWith(fontSize: 12),
+                                              unselectedLabelStyle: context
+                                                  .textTheme.bodyLarge
+                                                  ?.copyWith(fontSize: 12),
+                                              unselectedLabelColor:
+                                                  context.themeData.shadowColor,
+                                              tabs: const [
+                                                Tab(child: Text("Details")),
+                                                Tab(child: Text("Tasting notes")),
+                                                Tab(child: Text("History")),
+                                              ],
+                                            ),
+                                          ),
+                                          Expanded(
+                                            child: TabBarView(
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              children: [
+                                                DetailsWidget(
+                                                    details: widget
+                                                        .bottleDetails.details!),
+                                                Container(),
+                                                Container(),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                      Expanded(
-                                        child: TabBarView(
-                                          physics:
-                                              const NeverScrollableScrollPhysics(),
-                                          children: [
-                                            Container(),
-                                            Container(),
-                                            Container(),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ),
+                               ],
+                             ),
                             ],
                           ),
                         ),
