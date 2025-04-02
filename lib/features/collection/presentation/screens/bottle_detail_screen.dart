@@ -8,6 +8,7 @@ import 'package:pixelfield/features/collection/presentation/widgets/details.dart
 import 'package:pixelfield/features/collection/presentation/widgets/history.dart';
 import 'package:pixelfield/features/collection/presentation/widgets/tasting_notes.dart';
 import '../../../../common/utils/svg_render_widget.dart';
+import '../widgets/detail_custom_tab.dart';
 
 class BottleDetailScreen extends StatefulWidget {
   final Bottle bottleDetails;
@@ -83,6 +84,7 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                   ),
                 ),
                 Column(
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     Image.asset(widget.bottleDetails.image ?? ""),
                     const YMargin(39),
@@ -124,63 +126,7 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                             style: context.textTheme.displayLarge?.copyWith(
                                 fontSize: 22, fontWeight: FontWeight.w400),
                           ),
-                          SizedBox(
-                            height: context.deviceHeight() * 0.65,
-                            child: DefaultTabController(
-                              length: 3,
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.symmetric(
-                                        vertical: 26),
-                                    padding: const EdgeInsets.all(2),
-                                    height: 35,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(6),
-                                      color: context.primaryColor,
-                                    ),
-                                    child: TabBar(
-                                      indicatorSize: TabBarIndicatorSize.tab,
-                                      dividerColor: Colors.transparent,
-                                      indicator: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          color: context.secondaryColor),
-                                      labelColor: context.primaryColor,
-                                      labelStyle: context.textTheme.bodyLarge
-                                          ?.copyWith(fontSize: 12),
-                                      unselectedLabelStyle: context
-                                          .textTheme.bodyLarge
-                                          ?.copyWith(fontSize: 12),
-                                      unselectedLabelColor:
-                                          context.themeData.shadowColor,
-                                      tabs: const [
-                                        Tab(child: Text("Details")),
-                                        Tab(child: Text("Tasting notes")),
-                                        Tab(child: Text("History")),
-                                      ],
-                                    ),
-                                  ),
-                                  Flexible(
-                                    child: TabBarView(
-                                      physics:
-                                          const NeverScrollableScrollPhysics(),
-                                      children: [
-                                        DetailsWidget(
-                                            details:
-                                                widget.bottleDetails.details!),
-                                        TastingNotesWidget(
-                                          tastingNotes: widget
-                                              .bottleDetails.tastingNotes!,
-                                        ),
-                                        const HistoryWidget(),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                          DetailCustomTab(bottleDetails: widget.bottleDetails),
                         ],
                       ),
                     ),

@@ -36,8 +36,28 @@ class TastingNotesWidget extends StatelessWidget {
         ),
         const YMargin(8),
         const TastingNotesTile(title: "Nose"),
-        // const TastingNotesTile(title: "Palate"),
-        // const TastingNotesTile(title: "Finish"),
+        const TastingNotesTile(title: "Palate"),
+        const TastingNotesTile(title: "Finish"),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 18),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Your notes",
+                style: context.textTheme.headlineLarge
+                    ?.copyWith(fontWeight: FontWeight.w400, fontSize: 22),
+              ),
+              Icon(
+                Icons.arrow_back,
+                color: context.themeData.cardColor,
+              )
+            ],
+          ),
+        ),
+        const TastingNotesTile(title: "Nose"),
+        const TastingNotesTile(title: "Palate"),
+        const TastingNotesTile(title: "Finish"),
       ],
     );
   }
