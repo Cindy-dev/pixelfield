@@ -7,7 +7,6 @@ import 'package:pixelfield/features/collection/data/model/collection_model.dart'
 import 'package:pixelfield/features/collection/presentation/widgets/details.dart';
 import 'package:pixelfield/features/collection/presentation/widgets/history.dart';
 import 'package:pixelfield/features/collection/presentation/widgets/tasting_notes.dart';
-
 import '../../../../common/utils/svg_render_widget.dart';
 
 class BottleDetailScreen extends StatefulWidget {
