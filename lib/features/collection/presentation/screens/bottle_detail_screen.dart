@@ -4,9 +4,6 @@ import 'package:pixelfield/common/utils/margin_util.dart';
 import 'package:pixelfield/common/utils/pixelfield_button.dart';
 import 'package:pixelfield/common/utils/pixelfield_strings.dart';
 import 'package:pixelfield/features/collection/data/model/collection_model.dart';
-import 'package:pixelfield/features/collection/presentation/widgets/details.dart';
-import 'package:pixelfield/features/collection/presentation/widgets/history.dart';
-import 'package:pixelfield/features/collection/presentation/widgets/tasting_notes.dart';
 import '../../../../common/utils/svg_render_widget.dart';
 import '../widgets/detail_custom_tab.dart';
 
