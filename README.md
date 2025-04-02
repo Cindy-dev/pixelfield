@@ -24,7 +24,7 @@ A simple Flutter wine collection app.
   </p>
 
 ## DOWNLOAD APK
-<a href= ''> Click to download </a>
+<a href= 'https://drive.google.com/file/d/1q7E0WrfIFsHXHTi8NVKXEdohSXtuxc9K/view?usp=sharing'> Click to download </a>
 
 ## 🤓 Author(s)
 **Cindy dev**
