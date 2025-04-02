@@ -1,4 +1,7 @@
 class PixelFieldStrings {
+  static String paperClip = "assets/images/svgs/paperclip.svg";
+  static String play = "assets/images/svgs/vector.svg";
+  static String arrowDown = "assets/images/svgs/arrow_down.svg";
   static String background = "assets/images/background.png";
   static String oneCask = "assets/images/one_cask.png";
   static String oneCaskBottle = "assets/images/one_cask_bottle.png";
