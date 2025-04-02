@@ -11,4 +11,5 @@ class PixelFieldStrings {
   static String squaresFour = "assets/images/svgs/SquaresFour.svg";
   static String notification = "assets/images/svgs/notification.svg";
   static String genuineIcon = "assets/images/genuine-icon.png";
+  static String timeline = "assets/images/svgs/timeline.svg";
 }

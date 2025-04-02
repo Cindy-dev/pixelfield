@@ -31,7 +31,7 @@ class _DetailCustomTabState extends State<DetailCustomTab> {
       );
     }
     if (_selectedTabIndex == 2) {
-      return const HistoryWidget();
+      return HistoryWidget(labelDetails: widget.bottleDetails.labelDetails);
     }
     return const SizedBox.shrink();
   }
