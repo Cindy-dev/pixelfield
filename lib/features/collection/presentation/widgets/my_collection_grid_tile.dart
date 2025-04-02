@@ -14,8 +14,10 @@ class MyCollectionGridTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () =>
-          Navigator.of(context).pushNamed(PixelFieldRoutes.bottleDetailScreen),
+      splashFactory: NoSplash.splashFactory,
+      onTap: () => Navigator.of(context).pushNamed(
+          PixelFieldRoutes.bottleDetailScreen,
+          arguments: collectionData),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 25),
         decoration:

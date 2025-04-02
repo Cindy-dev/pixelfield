@@ -44,9 +44,7 @@ class CollectionService {
           name: HiveStrings.collectionBox,
         ) ??
         [];
-    return cachedData
-        .map((item) => Bottle.fromJson(item as Map<String, dynamic>))
-        .toList();
+    return cachedData.map((item) => item as Bottle).toList();
   }
 
   // Refresh data: load from asset, then update the cache if internet is available

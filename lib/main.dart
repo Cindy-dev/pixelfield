@@ -14,9 +14,8 @@ Future<void> main() async {
   // Set up dependency injection
   setupLocator();
   await Hive.initFlutter();
-  await HiveRepository.openHives([HiveStrings.collectionBox]);
   await HiveRepository.registerAdapters();
-
+  await HiveRepository.openHives([HiveStrings.collectionBox]);
   SystemChrome.setPreferredOrientations(
     [
       DeviceOrientation.portraitUp,
