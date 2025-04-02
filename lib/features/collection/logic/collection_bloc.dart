@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pixelfield/common/utils/app_extension.dart';
 import 'package:pixelfield/features/collection/data/repository/collection_service.dart';
 import '../data/repository/connectivity_service.dart';
 import 'collection_event.dart';
@@ -35,11 +36,9 @@ class CollectionBloc extends Bloc<CollectionEvent, CollectionState> {
             }
           }
         } else if (cachedData.isEmpty) {
-          emit(CollectionError("No internet connection and no cached data"));
+          emit(CollectionError("No internet connection and No Data Saved"));
         }
-      } catch (e,s) {
-        print(e);
-        print(s);
+      } catch (e) {
         emit(CollectionError("Error loading collections: ${e.toString()}"));
       }
     });
@@ -48,6 +47,7 @@ class CollectionBloc extends Bloc<CollectionEvent, CollectionState> {
       try {
         if (await connectivityService.isConnected) {
           var refreshedData = await collectionService.refreshData();
+          printOnlyInDebugMode(refreshedData);
           emit(CollectionLoaded(refreshedData));
         } else {
           emit(CollectionError("No internet connection for refresh."));
