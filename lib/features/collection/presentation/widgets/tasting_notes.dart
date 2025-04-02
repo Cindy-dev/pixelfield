@@ -3,9 +3,12 @@ import 'package:pixelfield/common/utils/app_extension.dart';
 import 'package:pixelfield/common/utils/margin_util.dart';
 import 'package:pixelfield/common/utils/pixelfield_strings.dart';
 import 'package:pixelfield/common/utils/svg_render_widget.dart';
+import 'package:pixelfield/features/collection/data/model/collection_model.dart';
+import 'package:pixelfield/features/collection/presentation/widgets/tasting_notes_tile.dart';
 
 class TastingNotesWidget extends StatelessWidget {
-  const TastingNotesWidget({super.key});
+  final TastingNotes tastingNotes;
+  const TastingNotesWidget({super.key, required this.tastingNotes});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +21,7 @@ class TastingNotesWidget extends StatelessWidget {
           color: context.primaryColor,
           child: SvgRenderWidget(svgPath: PixelFieldStrings.play),
         ),
+        const YMargin(16),
         Text(
           "Tasting notes",
           style: context.textTheme.displayLarge
@@ -30,11 +34,10 @@ class TastingNotesWidget extends StatelessWidget {
             color: context.themeData.cardColor.withOpacity(0.7),
           ),
         ),
-        Container(
-          margin: Edge,
-          height: 136,
-          color: context.primaryColor,
-        )
+        const YMargin(8),
+        const TastingNotesTile(title: "Nose"),
+        // const TastingNotesTile(title: "Palate"),
+        // const TastingNotesTile(title: "Finish"),
       ],
     );
   }

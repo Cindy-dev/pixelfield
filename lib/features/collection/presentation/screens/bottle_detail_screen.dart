@@ -125,7 +125,7 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                                 fontSize: 22, fontWeight: FontWeight.w400),
                           ),
                           SizedBox(
-                            height: context.deviceHeight() * 0.7,
+                            height: context.deviceHeight() * 0.65,
                             child: DefaultTabController(
                               length: 3,
                               child: Column(
@@ -161,7 +161,7 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                                       ],
                                     ),
                                   ),
-                                  Expanded(
+                                  Flexible(
                                     child: TabBarView(
                                       physics:
                                           const NeverScrollableScrollPhysics(),
@@ -169,7 +169,10 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                                         DetailsWidget(
                                             details:
                                                 widget.bottleDetails.details!),
-                                        const TastingNotesWidget(),
+                                        TastingNotesWidget(
+                                          tastingNotes: widget
+                                              .bottleDetails.tastingNotes!,
+                                        ),
                                         const HistoryWidget(),
                                       ],
                                     ),
