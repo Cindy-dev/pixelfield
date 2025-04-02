@@ -8,6 +8,8 @@ import 'package:pixelfield/features/collection/presentation/widgets/details.dart
 import 'package:pixelfield/features/collection/presentation/widgets/history.dart';
 import 'package:pixelfield/features/collection/presentation/widgets/tasting_notes.dart';
 
+import '../../../../common/utils/svg_render_widget.dart';
+
 class BottleDetailScreen extends StatefulWidget {
   final Bottle bottleDetails;
   const BottleDetailScreen({super.key, required this.bottleDetails});
@@ -55,6 +57,32 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                     )
                   ],
                 ),
+                Container(
+                  height: 40,
+                  margin: const EdgeInsets.only(top: 16, bottom: 52),
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: context.themeData.scaffoldBackgroundColor),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Image.asset(PixelFieldStrings.genuineIcon),
+                          const XMargin(8),
+                          Text(
+                            "Genuine Bottle (Unopened",
+                            style: context.textTheme.displaySmall
+                                ?.copyWith(fontSize: 14),
+                          )
+                        ],
+                      ),
+                      SvgRenderWidget(
+                        svgPath: PixelFieldStrings.arrowDown,
+                      )
+                    ],
+                  ),
+                ),
                 Column(
                   children: [
                     Image.asset(widget.bottleDetails.image ?? ""),
@@ -73,19 +101,15 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                                 ?.copyWith(fontSize: 12),
                           ),
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(vertical: 7),
+                            padding: const EdgeInsets.symmetric(vertical: 7),
                             child: Text.rich(
                               TextSpan(
                                 text: widget.bottleDetails.name ?? "",
-                                style: context.textTheme.displayLarge
-                                    ?.copyWith(
-                                        fontSize: 32,
-                                        fontWeight: FontWeight.w500),
+                                style: context.textTheme.displayLarge?.copyWith(
+                                    fontSize: 32, fontWeight: FontWeight.w500),
                                 children: [
                                   TextSpan(
-                                    text:
-                                        " ${widget.bottleDetails.age ?? ""}",
+                                    text: " ${widget.bottleDetails.age ?? ""}",
                                     style: context.textTheme.displayLarge
                                         ?.copyWith(
                                             fontSize: 32,
@@ -113,21 +137,18 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                                     padding: const EdgeInsets.all(2),
                                     height: 35,
                                     decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(6),
+                                      borderRadius: BorderRadius.circular(6),
                                       color: context.primaryColor,
                                     ),
                                     child: TabBar(
-                                      indicatorSize:
-                                          TabBarIndicatorSize.tab,
+                                      indicatorSize: TabBarIndicatorSize.tab,
                                       dividerColor: Colors.transparent,
                                       indicator: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(12),
                                           color: context.secondaryColor),
                                       labelColor: context.primaryColor,
-                                      labelStyle: context
-                                          .textTheme.bodyLarge
+                                      labelStyle: context.textTheme.bodyLarge
                                           ?.copyWith(fontSize: 12),
                                       unselectedLabelStyle: context
                                           .textTheme.bodyLarge
@@ -147,8 +168,8 @@ class _BottleDetailScreenState extends State<BottleDetailScreen> {
                                           const NeverScrollableScrollPhysics(),
                                       children: [
                                         DetailsWidget(
-                                            details: widget
-                                                .bottleDetails.details!),
+                                            details:
+                                                widget.bottleDetails.details!),
                                         const TastingNotesWidget(),
                                         const HistoryWidget(),
                                       ],
