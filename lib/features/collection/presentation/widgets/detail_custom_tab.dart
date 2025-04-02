@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pixelfield/common/utils/app_extension.dart';
-import 'package:pixelfield/common/utils/margin_util.dart';
 import 'package:pixelfield/features/collection/presentation/widgets/tasting_notes.dart';
 import '../../data/model/collection_model.dart';
 import 'details.dart';
@@ -42,6 +41,7 @@ class _DetailCustomTabState extends State<DetailCustomTab> {
       children: [
         Container(
           height: 35,
+          margin: const EdgeInsets.symmetric(vertical: 24),
           alignment: Alignment.center,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
@@ -83,7 +83,6 @@ class _DetailCustomTabState extends State<DetailCustomTab> {
             ),
           ),
         ),
-        const YMargin(24),
         // Tab Content Section
         selectedWidget()
       ],
