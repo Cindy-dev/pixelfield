@@ -17,8 +17,11 @@ A simple Flutter wine collection app.
 
 
 <p align="center">
-  <img src="assets\e_commerce_app\e_commerce_image\screenshot\home.png" width="400">
-    </p>
+  <img src="assets\screenshots\splash.png" width="400">
+  <img src="assets\screenshots\welcome.png" width="400">
+  <img src="assets\screenshots\collection.png" width="400">
+  <img src="assets\screenshots\detail.png" width="400">
+  </p>
 
 ## DOWNLOAD APK
 <a href= ''> Click to download </a>
